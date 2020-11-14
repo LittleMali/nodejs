@@ -1,6 +1,8 @@
 var dgram = require('dgram');
 
-var server = dgram.createSocket('udp4').bind(12345);
+const SRV_PORT = 12345;
+
+var server = dgram.createSocket('udp4').bind(SRV_PORT);
 server.on('listening', function() {
     var address = server.address();
     console.log(`server listening on: ${address.address}, port: ${address.port}`);
